@@ -4,3 +4,6 @@
 .cache/
 
 logs/
+airflow.cfg
+airflow.db
+unittests.cfg
