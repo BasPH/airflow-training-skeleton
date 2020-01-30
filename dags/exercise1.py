@@ -6,9 +6,12 @@ from airflow.operators.dummy_operator import DummyOperator
 
 dag = DAG(
     dag_id="exercise1",
-    default_args={"owner": "Schuberg Philis", "start_date": airflow.utils.dates.days_ago(2)},
-    schedule_interval=datetime.timedelta(hours=2.5),
+    default_args={"owner": "Schuberg Philis", "start_date": airflow.utils.dates.days_ago(5)},
+    schedule_interval="45 13 * * 1,3,5",
 )
+
+# 45 13 * * 1,3,5
+# https://stackoverflow.com/a/26433349
 
 task1 = DummyOperator(task_id="task1", dag=dag)
 task2 = DummyOperator(task_id="task2", dag=dag)
