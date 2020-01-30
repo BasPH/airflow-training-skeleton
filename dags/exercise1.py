@@ -1,11 +1,13 @@
+import datetime
+
 import airflow.utils.dates
 from airflow.models import DAG
 from airflow.operators.dummy_operator import DummyOperator
 
 dag = DAG(
     dag_id="exercise1",
-    default_args={"owner": "Schuberg Philis", "start_date": airflow.utils.dates.days_ago(1)},
-    schedule_interval="@daily",
+    default_args={"owner": "Schuberg Philis", "start_date": airflow.utils.dates.days_ago(2)},
+    schedule_interval=datetime.timedelta(hours=2.5),
 )
 
 task1 = DummyOperator(task_id="task1", dag=dag)
