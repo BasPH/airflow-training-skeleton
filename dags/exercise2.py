@@ -15,8 +15,8 @@ print_execution_date = PythonOperator(
 )
 
 wait1 = BashOperator(task_id="wait1", bash_command="sleep 1", dag=dag)
-wait5 = BashOperator(task_id="wait1", bash_command="sleep 5", dag=dag)
-wait10 = BashOperator(task_id="wait1", bash_command="sleep 10", dag=dag)
+wait5 = BashOperator(task_id="wait5", bash_command="sleep 5", dag=dag)
+wait10 = BashOperator(task_id="wait10", bash_command="sleep 10", dag=dag)
 
 theend = DummyOperator(task_id="theend", dag=dag)
 
