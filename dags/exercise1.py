@@ -5,7 +5,7 @@ from airflow.operators.dummy_operator import DummyOperator
 dag = DAG(
     dag_id="exercise1",
     default_args={"owner": "Schuberg Philis", "start_date": airflow.utils.dates.days_ago(1)},
-    schedule_interval=None,
+    schedule_interval="@daily",
 )
 
 task1 = DummyOperator(task_id="task1", dag=dag)
