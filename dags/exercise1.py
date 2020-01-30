@@ -1,7 +1,7 @@
 from airflow.models import DAG
 from airflow.operators.dummy_operator import DummyOperator
 
-dag = DAG(dag_id="example_bash_operator", default_args={"owner": "Schuberg Philis"}, schedule_interval=None)
+dag = DAG(dag_id="exercise1", default_args={"owner": "Schuberg Philis"}, schedule_interval=None)
 
 task1 = DummyOperator(task_id="task1")
 task2 = DummyOperator(task_id="task2")
